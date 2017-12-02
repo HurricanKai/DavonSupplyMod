@@ -106,11 +106,7 @@ namespace DavonSupplyMod
             if (Planetarium.GetUniversalTime() > nextchecktime)
             {
                 nextchecktime = Planetarium.GetUniversalTime() + 60;
-                if (String.IsNullOrEmpty(request) || "0" == request.Substring(0,1))//check if there is delivery pending
-			    {
-                    //nothing
-			    }
-                else
+                if (!(String.IsNullOrEmpty(request) || "0" == request.Substring(0,1)))//check if there is delivery pending
                 {
                     checkdelivery();
                 }
